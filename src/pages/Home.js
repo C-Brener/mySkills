@@ -34,13 +34,13 @@ export function Home(){
 
             <Text style={[styles.title, {marginVertical:50}]} >My Skills</Text>
 
-            {
-                mySkills.map(mySkills=>(
-                <TouchableOpacity key={mySkills} style={[styles.buttonSkill, {marginBottom:10}]}>
-                    <Text style={styles.textSkill}>{mySkills}</Text>
+          {
+              mySkills.map(functionSkills=>(
+                <TouchableOpacity key={functionSkills} style={[styles.buttonSkill, {marginBottom:10}]}>
+                    <Text style={styles.textSkill}>{functionSkills}</Text>
                 </TouchableOpacity>
-                ))
-            }
+              ))
+          }
 
         </View>
     );
