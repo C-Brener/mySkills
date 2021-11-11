@@ -3,8 +3,8 @@ import {
     Text, 
     View, 
     TextInput, 
-    TouchableOpacity, 
     StyleSheet,
+    FlatList,
     ScrollView,
     Platform} from 'react-native'
 
@@ -20,7 +20,7 @@ export function Home(){
        setMySkills(oldState =>[...oldState, newSkill])
     }
     return(
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <Text style={styles.title}>Welcome, Caique!</Text>
             <TextInput 
             placeholder='Your Skill' 
@@ -32,14 +32,36 @@ export function Home(){
             <Button propOnpress={handleAddNewSkill}/>
 
             <Text style={[styles.title, {marginVertical:50}]} >My Skills</Text>
+            {
+                /*
+                <ScrollView> 
+                  {
+                      mySkills.map(Skills=>(
+                          <CardSkill key={Skills} propSkills={Skills}/>
+                      ))
+                  }            
+                </ScrollView> 
+                */
+            }
+            {/* A Flatlist lida melhor com lista grandes
+                Só renderizará o que for necessário mostrar naquele momento
+                Melhora a performance do APP
+                Não utiliza o prototype map
+                data = coleção de dados a ser renderizada
+                keyExtrator = extração da key de cada item indicando que aquela key é unica baseada em seu nome
+                cada item será sua própria key baseada na listagem 
+                renderItem =
+            */}
+            <FlatList
+                showsVerticalScrollIndicator={false}
+                data={mySkills}
+                keyExtractor = {item => item}
+                renderItem={({item}) => (
+                    <CardSkill propSkills={item}/>
+                )}
+            />
 
-          {
-              mySkills.map(Skills=>(
-                  <CardSkill propSkills={Skills}/>
-              ))
-          }
-
-        </ScrollView>
+        </View>
     );
 }
 const styles = StyleSheet.create({

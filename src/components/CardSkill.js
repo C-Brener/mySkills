@@ -4,7 +4,7 @@ import {TouchableOpacity, StyleSheet, Text, Platform} from 'react-native'
 
 export function CardSkill({propSkills}){
     return(
-    <TouchableOpacity key={propSkills} style={[styles.buttonSkill, {marginBottom:10}]}>
+    <TouchableOpacity style={[styles.buttonSkill, {marginBottom:10}]}>
         <Text style={styles.textSkill}>{propSkills}</Text>
     </TouchableOpacity>
     );
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     },
     textSkill:{
         color:'#FFF',
-        fontSize:25,
+        fontSize:20,
         fontWeight:'bold',
         textAlign:'center'
     }
