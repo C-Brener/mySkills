@@ -2,10 +2,10 @@ import React from 'react'
 import {TouchableOpacity, StyleSheet, Text, Platform} from 'react-native'
 
 
-export function CardSkill(){
+export function CardSkill({propSkills}){
     return(
-    <TouchableOpacity key={functionSkills} style={[styles.buttonSkill, {marginBottom:10}]}>
-        <Text style={styles.textSkill}>{functionSkills}</Text>
+    <TouchableOpacity key={propSkills} style={[styles.buttonSkill, {marginBottom:10}]}>
+        <Text style={styles.textSkill}>{propSkills}</Text>
     </TouchableOpacity>
     );
 }

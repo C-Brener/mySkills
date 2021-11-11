@@ -4,7 +4,8 @@ import {
     View, 
     TextInput, 
     TouchableOpacity, 
-    StyleSheet, 
+    StyleSheet,
+    ScrollView,
     Platform} from 'react-native'
 
     {/* My Components */}
@@ -19,7 +20,7 @@ export function Home(){
        setMySkills(oldState =>[...oldState, newSkill])
     }
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <Text style={styles.title}>Welcome, Caique!</Text>
             <TextInput 
             placeholder='Your Skill' 
@@ -28,17 +29,17 @@ export function Home(){
             onChangeText={setNewSkill}
             />
 
-            <Button/>
+            <Button propOnpress={handleAddNewSkill}/>
 
             <Text style={[styles.title, {marginVertical:50}]} >My Skills</Text>
 
           {
-              mySkills.map(functionSkills=>(
-                  <CardSkill/>
+              mySkills.map(Skills=>(
+                  <CardSkill propSkills={Skills}/>
               ))
           }
 
-        </View>
+        </ScrollView>
     );
 }
 const styles = StyleSheet.create({
