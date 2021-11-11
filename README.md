@@ -8,6 +8,10 @@
 * ## Components Creation
 * ## Structure of a React Native CLI project
 * ## Immutability
+* ## ScrollView and FlatList
+* ## Props
+
+
 
 
 
