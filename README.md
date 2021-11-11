@@ -6,5 +6,8 @@
 * ## StyleSheet
 * ## Conditional Rendering
 * ## Components Creation
-* ## Structure of a React Native project
+* ## Structure of a React Native CLI project
 * ## Immutability
+
+
+
