@@ -50,17 +50,17 @@ export function Home(){
                 data = coleção de dados a ser renderizada
                 keyExtrator = extração da key de cada item indicando que aquela key é unica baseada em seu nome
                 cada item será sua própria key baseada na listagem 
-                renderItem =
+                renderItem = renderiza os itens de acordo com as keys que ele achar 
+                Vale salientar que se trata de um desestruturalização do vetor item
             */}
             <FlatList
                 showsVerticalScrollIndicator={false}
                 data={mySkills}
-                keyExtractor = {item => item}
-                renderItem={({item}) => (
+                keyExtractor={item=>item}
+                renderItem={({item})=>(
                     <CardSkill propSkills={item}/>
                 )}
             />
-
         </View>
     );
 }
