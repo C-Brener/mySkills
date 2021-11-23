@@ -52,12 +52,15 @@ export function Home(){
             <Text>{grettings}</Text>
             <TextInput 
             placeholder='Your Skill' 
-            placeholdeTextColor='#555' 
+            placeholderTextColor='#555' 
             style={styles.input}
             onChangeText={setNewSkill}
             />
 
-            <Button propOnpress={handleAddNewSkill}/>
+            <Button 
+                onPress={handleAddNewSkill}
+                title='Add Skill'
+            />
 
             <Text style={[styles.title, {marginVertical:50}]} >My Skills</Text>
             {
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     },
     input:{
         marginTop:10,
-        padding: Platform === 'ios'?17:15,
+        padding: Platform === "ios" ? 17 : 15,
         borderRadius:5,
         backgroundColor:'#1F1E25'
     },
